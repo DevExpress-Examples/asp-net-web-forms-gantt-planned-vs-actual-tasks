@@ -13,7 +13,7 @@ The client-side [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGa
 
 The main idea is to create two HTML div elements and add them to a task container. The first element represents [planned](https://github.com/DevExpress-Examples/gantt-for-web-forms-planned-vs-actual-tasks/blob/21.1.3%2B/CS/DXWebApplication1/Default.aspx#L21) tasks. It is created based on the taskSize parameter.
 
-The second element is for an actual task. Its size and position are [calculated](.//CS/DXWebApplication1/Default.aspx) based on task data. Appearance of actual tasks is defined by the [actual-task](https://github.com/DevExpress-Examples/gantt-for-web-forms-planned-vs-actual-tasks/blob/21.1.3%2B/CS/DXWebApplication1/Default.aspx#L66) class. 
+The second element is for an actual task. Its size and position are [calculated](.//CS/DXWebApplication1/Default.aspx) based on task data. Appearance of actual tasks is defined by the [actual-task](https://github.com/DevExpress-Examples/gantt-for-web-forms-planned-vs-actual-tasks/blob/21.1.3%2B/CS/DXWebApplication1/Default.aspx#L66) CSS class. 
 
 <!-- default file list -->
 *Files to look at*:
