@@ -19,6 +19,4 @@ The second element is for an actual task. Its size and position are [calculated]
 *Files to look at*:
 
 * [Default.aspx](./CS/DXWebApplication1/Default.aspx)
-* [Default.aspx.cs](./CS/DXWebApplication1/Default.aspx.cs)
-* [GanttDataProvider.cs](.CS/DXWebApplication1/App_Data/GanttDataProvider.cs)
 <!-- default file list end -->
