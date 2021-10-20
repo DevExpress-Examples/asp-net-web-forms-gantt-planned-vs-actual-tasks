@@ -11,15 +11,15 @@ The Gantt data source contains [four date fields](https://github.com/DevExpress-
 
 The client-side [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event is used to display two visual elements for one task.
 
- # [ASPx](#tab/tabid-aspx)
+
 ```aspx
         <dx:ASPxGantt ID="Gantt" runat="server" ...>
             <ClientSideEvents TaskShowing="getTaskContentTemplate" />
             ...
         </dx:ASPxGantt>
 ```
- # [JavaScript](#tab/tabid-js)
- ```js
+
+```js
         function getTaskContentTemplate(s, e) {
             var $parentContainer = $(document.createElement("div"));
             appendPlannedTask(e.item.taskData, e.item.taskResources[0], e.item.taskSize.width, $parentContainer);
