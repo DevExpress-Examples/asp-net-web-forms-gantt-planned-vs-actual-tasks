@@ -6,62 +6,66 @@
 '     the code is regenerated. 
 ' </auto-generated>
 '------------------------------------------------------------------------------
+
+Option Strict On
+Option Explicit On
+
 Namespace DXWebApplication1
 
-    Public Partial Class [Default]
+    Partial Public Class [Default]
 
-        ''' <summary>
-        ''' form1 control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+        '''<summary>
+        '''form1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
-        ''' <summary>
-        ''' Gantt control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected Gantt As Global.DevExpress.Web.ASPxGantt.ASPxGantt
+        '''<summary>
+        '''Gantt control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Gantt As Global.DevExpress.Web.ASPxGantt.ASPxGantt
 
-        ''' <summary>
-        ''' TasksDataSource control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected TasksDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
+        '''<summary>
+        '''TasksDataSource control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents TasksDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
 
-        ''' <summary>
-        ''' DependenciesDataSource control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected DependenciesDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
+        '''<summary>
+        '''DependenciesDataSource control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents DependenciesDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
 
-        ''' <summary>
-        ''' ResourcesDataSource control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected ResourcesDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
+        '''<summary>
+        '''ResourcesDataSource control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ResourcesDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
 
-        ''' <summary>
-        ''' ResourceAssignmentsDataSource control.
-        ''' </summary>
-        ''' <remarks>
-        ''' Auto-generated field.
-        ''' To modify move field declaration from designer file to code-behind file.
-        ''' </remarks>
-        Protected ResourceAssignmentsDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
+        '''<summary>
+        '''ResourceAssignmentsDataSource control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ResourceAssignmentsDataSource As Global.System.Web.UI.WebControls.ObjectDataSource
     End Class
 End Namespace
