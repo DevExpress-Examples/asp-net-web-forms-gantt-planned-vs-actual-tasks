@@ -12,7 +12,7 @@ Namespace DXWebApplication1
             '''    at ICSharpCode.CodeConverter.VB.CommentConvertingVisitorWrapper`1.Accept(SyntaxNode csNode, Boolean addSourceMapping)
             ''' 
             ''' Input:
-            '''             DevExpress.Web.ASPxWebControl.CallbackError += new System.EventHandler(this.Application_Error)
+            '''DevExpress.Web.ASPxWebControl.CallbackError += New System.EventHandler(this.Application_Error)
         End Sub
 
         Private Sub Application_End(ByVal sender As Object, ByVal e As EventArgs)
