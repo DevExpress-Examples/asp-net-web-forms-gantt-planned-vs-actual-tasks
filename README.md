@@ -7,7 +7,7 @@
 
 This example demonstrates how to display both actual and planned tasks in the Gantt chart area.
 
-The Gantt data source contains [four date fields](https://github.com/DevExpress-Examples/gantt-for-web-forms-planned-vs-actual-tasks/blob/21.1.3%2B/CS/DXWebApplication1/App_Data/GanttDataProvider.cs): two of them contain planned dates for a task and the other two are filled based on real dates of each task.
+The Gantt data source contains [four date fields]./CS/DXWebApplication1/App_Data/GanttDataProvider.cs): two of them contain planned dates for a task and the other two are filled based on real dates of each task.
 
 The client-side [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event is used to display two visual elements for one task.
 
@@ -28,7 +28,7 @@ The client-side [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGa
         }
  ```
 
-The main idea is to create two HTML div elements and add them to a task container. The first element represents [planned](https://github.com/DevExpress-Examples/gantt-for-web-forms-planned-vs-actual-tasks/blob/21.1.3%2B/CS/DXWebApplication1/Default.aspx#L21) tasks. It is created based on the taskSize parameter. The taskSize parameter comes from the  [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
+The main idea is to create two HTML div elements and add them to a task container. The first element represents [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. It is created based on the taskSize parameter. The taskSize parameter comes from the  [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
 
 ```js
         function appendPlannedTask(taskData, resource, taskWidth, container) {
