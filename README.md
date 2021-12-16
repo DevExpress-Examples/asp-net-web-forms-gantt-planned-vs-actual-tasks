@@ -7,11 +7,11 @@
 
 This example demonstrates how to display actual and planned tasks in the Gantt chart.
 
-The main idea is to create two div elements and add them to a task's container. The first element displays [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. The second element is for [actual](./CS/DXWebApplication1/Default.aspx#L45) tasks.
+The main idea of this example is to create two div elements and add them to a task's container. The first div element displays [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. The second div element is for [actual](./CS/DXWebApplication1/Default.aspx#L45) tasks.
 
 ![DevExpress Gantt - Planned vs Actual Tasks](~/images/images/gantt-planned-actual-tasks.png)
 
-The data source contains [four date fields](./CS/DXWebApplication1/App_Data/GanttDataProvider.cs). Two date fields (startDate, endDate) contain planned dates for a task. The other two are actual task dates.
+The data source with Gantt data contains [four date fields](./CS/DXWebApplication1/App_Data/GanttDataProvider.cs). Two date fields (startDate, endDate) contain planned dates for a task. The other two are actual task dates.
 
 ```csharp
 public class Task
@@ -42,7 +42,7 @@ function getTaskContentTemplate(s, e) {
 }
 ```
 
-The first div element (planned task) uses the [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) parameter to specify the task's width.
+The first div element (planned task) uses the [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) parameter as the element's width.
 
 ```js
 function appendPlannedTask(taskData, resource, taskWidth, container) {
