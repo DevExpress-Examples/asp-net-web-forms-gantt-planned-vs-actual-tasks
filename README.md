@@ -9,7 +9,7 @@ This example demonstrates how to display actual and planned tasks in the Gantt c
 
 The main idea of this example is to create two div elements and add them to a task's container. The first div element displays [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. The second div element is for [actual](./CS/DXWebApplication1/Default.aspx#L45) tasks.
 
-![DevExpress Gantt - Planned vs Actual Tasks](~/images/gantt-planned-actual-tasks.png)
+![DevExpress Gantt - Planned vs Actual Tasks](/images/gantt-planned-actual-tasks.png)
 
 The data source with Gantt data contains [four date fields](./CS/DXWebApplication1/App_Data/GanttDataProvider.cs). Two date fields (startDate, endDate) contain planned dates for a task. The other two are actual task dates.
 
