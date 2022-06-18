@@ -3,86 +3,72 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1033229)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# Gantt for Web Forms - Planned vs Actual Tasks  
+# Gantt for Web Forms - Planned vs actual tasks  
 
-This example demonstrates how to display actual and planned tasks in the Gantt chart.
+This example demonstrates how to display both actual and planned tasks in the Gantt chart area.
 
-The main idea of this example is to create two div elements and add them to a task's container. The first div element displays [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. The second div element is for [actual](./CS/DXWebApplication1/Default.aspx#L45) tasks.
+The Gantt data source contains [four date fields]./CS/DXWebApplication1/App_Data/GanttDataProvider.cs): two of them contain planned dates for a task and the other two are filled based on real dates of each task.
 
-![DevExpress Gantt - Planned vs Actual Tasks](/images/gantt-planned-actual-tasks.png)
+The client-side [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event is used to display two visual elements for one task.
 
-The data source with Gantt data contains [four date fields](./CS/DXWebApplication1/App_Data/GanttDataProvider.cs). Two date fields (startDate, endDate) contain planned dates for a task. The other two are actual task dates.
-
-```csharp
-public class Task
-{
-    //...
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public DateTime ActualStartDate { get; set; }
-    public DateTime ActualEndDate { get; set; }
-}
-```
-
-Handle the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event to create two div elements and add them to a task's container (the e.container property).
 
 ```aspx
-<dx:ASPxGantt ID="Gantt" runat="server" ...>
-    <ClientSideEvents TaskShowing="getTaskContentTemplate" />
-    ...
-</dx:ASPxGantt>
+        <dx:ASPxGantt ID="Gantt" runat="server" ...>
+            <ClientSideEvents TaskShowing="getTaskContentTemplate" />
+            ...
+        </dx:ASPxGantt>
 ```
 
 ```js
-function getTaskContentTemplate(s, e) {
-    var $parentContainer = $(document.createElement("div"));
-    appendPlannedTask(e.item.taskData, e.item.taskResources[0], e.item.taskSize.width, $parentContainer);
-    appendActualTask(e.item.taskData, e.item.taskSize.width, $parentContainer);
-    $parentContainer.appendTo(e.container);
-}
-```
+        function getTaskContentTemplate(s, e) {
+            var $parentContainer = $(document.createElement("div"));
+            appendPlannedTask(e.item.taskData, e.item.taskResources[0], e.item.taskSize.width, $parentContainer);
+            appendActualTask(e.item.taskData, e.item.taskSize.width, $parentContainer);
+            $parentContainer.appendTo(e.container);
+        }
+ ```
 
-The first div element (planned task) uses the [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) parameter as the element's width.
-
-```js
-function appendPlannedTask(taskData, resource, taskWidth, container) {
-    var $plannedTaskContainer = $(document.createElement("div"))
-        .addClass("planned-task")
-        .attr("style", "width:" + taskWidth + "px;")
-        .appendTo(container);
-    var $wrapper = $(document.createElement("div"))
-        .addClass("planned-task-wrapper")
-        .appendTo($plannedTaskContainer);
-    $(document.createElement("div"))
-        .addClass("planned-task-title")
-        .text(taskData.Title)
-        .appendTo($wrapper);
-    $(document.createElement("div"))
-        .addClass("planned-task-resource")
-        .text(resource ? resource.text : "")
-        .appendTo($wrapper);
-    $(document.createElement("div"))
-        .addClass("planned-task-progress")
-        .attr("style", "width:" + (parseFloat(taskData.Progress)) + "%;")
-        .appendTo($plannedTaskContainer);
-}
-```
-
-The second div element (actual task) calculates its width and position based on the StartDate, EndDate, ActualStartDate, and ActualEndDate properties from the [e.item.taskData](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) object. 
+The main idea is to create two HTML div elements and add them to a task container. The first element represents [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. It is created based on the taskSize parameter. The taskSize parameter comes from the  [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
 
 ```js
-function appendActualTask(taskData, taskWidth, container) {
-    var taskRange = taskData.EndDate - taskData.StartDate;
-    var tickSize = taskWidth / taskRange;
-    var actualTaskOffset = new Date(taskData.ActualStartDate) - taskData.StartDate;
-    var actualTaskRange = new Date(taskData.ActualEndDate) - new Date(taskData.ActualStartDate);
-    var actualTaskWidth = Math.round(actualTaskRange * tickSize) + "px";
-    var actualTaskLeftPosition = Math.round(actualTaskOffset * tickSize) + "px";
-    $(document.createElement("div"))
-        .addClass("actual-task")
-        .attr("style", "width:" + actualTaskWidth + "; left:" + actualTaskLeftPosition)
-        .appendTo(container);
-}
+        function appendPlannedTask(taskData, resource, taskWidth, container) {
+            var $plannedTaskContainer = $(document.createElement("div"))
+                .addClass("planned-task")
+                .attr("style", "width:" + taskWidth + "px;")
+                .appendTo(container);
+            var $wrapper = $(document.createElement("div"))
+                .addClass("planned-task-wrapper")
+                .appendTo($plannedTaskContainer);
+            $(document.createElement("div"))
+                .addClass("planned-task-title")
+                .text(taskData.Title)
+                .appendTo($wrapper);
+            $(document.createElement("div"))
+                .addClass("planned-task-resource")
+                .text(resource ? resource.text : "")
+                .appendTo($wrapper);
+            $(document.createElement("div"))
+                .addClass("planned-task-progress")
+                .attr("style", "width:" + (parseFloat(taskData.Progress)) + "%;")
+                .appendTo($plannedTaskContainer);
+        }
+```
+
+The second element is for an actual task. Its size and position are [calculated](.//CS/DXWebApplication1/Default.aspx) based on task data. The task data contains the StartDate, EndDate, ActualStartDate, and ActualEndDate that are used to calculate the position of the actual task. The task data comes from the [e.item.taskData](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
+
+```js
+        function appendActualTask(taskData, taskWidth, container) {
+            var taskRange = taskData.EndDate - taskData.StartDate;
+            var tickSize = taskWidth / taskRange;
+            var actualTaskOffset = new Date(taskData.ActualStartDate) - taskData.StartDate;
+            var actualTaskRange = new Date(taskData.ActualEndDate) - new Date(taskData.ActualStartDate);
+            var actualTaskWidth = Math.round(actualTaskRange * tickSize) + "px";
+            var actualTaskLeftPosition = Math.round(actualTaskOffset * tickSize) + "px";
+            $(document.createElement("div"))
+                .addClass("actual-task")
+                .attr("style", "width:" + actualTaskWidth + "; left:" + actualTaskLeftPosition)
+                .appendTo(container);
+        }
 ```
 
 <!-- default file list -->
