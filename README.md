@@ -28,7 +28,7 @@ function getTaskContentTemplate(s, e) {
 }
  ```
 
-The main idea is to create two HTML div elements and add them to a task container. The first element represents [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. It is created based on the taskSize parameter. The taskSize parameter comes from the  [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
+The main idea is to create two HTML div elements and add them to a task container. The first element represents [planned](./CS/DXWebApplication1/Default.aspx#L21) tasks. It is created based on the `taskSize` parameter. The `taskSize` parameter comes from the  [e.item.taskSize.width](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
 
 ```js
 function appendPlannedTask(taskData, resource, taskWidth, container) {
@@ -54,7 +54,7 @@ function appendPlannedTask(taskData, resource, taskWidth, container) {
 }
 ```
 
-The second element is for an actual task. Its size and position are [calculated](.//CS/DXWebApplication1/Default.aspx) based on task data. The task data contains the StartDate, EndDate, ActualStartDate, and ActualEndDate that are used to calculate the position of the actual task. The task data comes from the [e.item.taskData](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
+The second element is for an actual task. Its size and position are [calculated](.//CS/DXWebApplication1/Default.aspx) based on task data. The task data contains the `StartDate`, `EndDate`, `ActualStartDate`, and `ActualEndDate` that are used to calculate the position of the actual task. The task data comes from the [e.item.taskData](https://docs.devexpress.com/AspNet/js-ASPxClientGanttTaskShowingEventArgs.item) property of the [TaskShowing](https://docs.devexpress.com/AspNet/js-ASPxClientGantt.TaskShowing) event.
 
 ```js
 function appendActualTask(taskData, taskWidth, container) {
