@@ -77,7 +77,7 @@ function appendActualTask(taskData, taskWidth, container) {
 * [Default.aspx](./CS/DXWebApplication1/Default.aspx)
 * [GanttDataProvider.cs](./CS/DXWebApplication1/App_Data/GanttDataProvider.cs) (VB: [GanttDataProvider.vb](./VB/DXWebApplication1/App_Data/GanttDataProvider.vb))
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-web-forms-gantt-planned-vs-actual-tasks&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-web-forms-gantt-planned-vs-actual-tasks&~~~was_helpful=no)
 
